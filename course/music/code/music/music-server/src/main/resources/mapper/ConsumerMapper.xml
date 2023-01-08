@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.flora.music.dao.ConsumerMapper">
+    <resultMap id="BaseResultMap" type="com.flora.music.domain.Consumer">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="username" property="username" jdbcType="VARCHAR" />
+        <result column="password" property="password" jdbcType="VARCHAR" />
+        <result column="sex" property="sex" jdbcType="TINYINT" />
+        <result column="phone_num" property="phoneNum" jdbcType="CHAR" />
+        <result column="email" property="email" jdbcType="CHAR" />
+        <result column="birth" property="birth" jdbcType="TIMESTAMP" />
+        <result column="introduction" property="introduction" jdbcType="VARCHAR" />
+        <result column="location" property="location" jdbcType="VARCHAR" />
+        <result column="avator" property="avator" jdbcType="VARCHAR" />
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, username, password, sex, phone_num, email, birth, introduction, location, avator, create_time, update_time
+    </sql>
+
+    <insert id="insert" parameterType="com.flora.music.domain.Consumer">
+        insert into consumer
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="username != null" >
+                username,
+            </if>
+            <if test="password != null" >
+                password,
+            </if>
+            <if test="sex != null" >
+                sex,
+            </if>
+            <if test="phoneNum != null" >
+                phone_num,
+            </if>
+            <if test="email != null" >
+                email,
+            </if>
+            <if test="birth != null" >
+                birth,
+            </if>
+            <if test="introduction != null" >
+                introduction,
+            </if>
+            <if test="location != null" >
+                location,
+            </if>
+            <if test="avator != null" >
+                avator,
+            </if>
+            create_time,update_time,
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id},
+            </if>
+            <if test="username != null" >
+                #{username},
+            </if>
+            <if test="password != null" >
+                #{password},
+            </if>
+            <if test="sex != null" >
+                #{sex},
+            </if>
+            <if test="phoneNum != null" >
+                #{phoneNum},
+            </if>
+            <if test="email != null" >
+                #{email},
+            </if>
+            <if test="birth != null" >
+                #{birth},
+            </if>
+            <if test="introduction != null" >
+                #{introduction},
+            </if>
+            <if test="location != null" >
+                #{location},
+            </if>
+            <if test="avator != null" >
+                #{avator},
+            </if>
+            now(), now(),
+        </trim>
+  </insert>
+    <update id="update" parameterType="com.flora.music.domain.Consumer">
+        update consumer
+        <set>
+            <if test="username != null" >
+                username = #{username},
+            </if>
+            <if test="password != null" >
+                password = #{password},
+            </if>
+            <if test="sex != null" >
+                sex = #{sex},
+            </if>
+            <if test="phoneNum != null" >
+                phone_num = #{phoneNum},
+            </if>
+            <if test="email != null" >
+                email = #{email},
+            </if>
+            <if test="birth != null" >
+                birth = #{birth},
+            </if>
+            <if test="introduction != null" >
+                introduction = #{introduction},
+            </if>
+            <if test="location != null" >
+                location = #{location},
+            </if>
+            <if test="avator != null" >
+                avator = #{avator},
+            </if>
+            update_time = now(),
+        </set>
+        where id = #{id}
+    </update>
+    <delete id="delete" parameterType="java.lang.Integer">
+        delete from consumer where id = #{id}
+    </delete>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"></include>
+        from consumer
+        where id = #{id}
+    </select>
+    <select id="allConsumer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"></include>
+        from consumer
+    </select>
+    <select id="selectByUsername" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"></include>
+        from consumer
+        where username = #{username}
+    </select>
+    <select id="verifyPassword" resultType="java.lang.Integer" parameterType="java.util.HashMap">
+        select
+        count(*)
+        from consumer
+        where username = #{username} and password = #{password}
+    </select>
+</mapper>
