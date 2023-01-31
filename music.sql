@@ -11,7 +11,7 @@
  Target Server Version : 80029
  File Encoding         : 65001
 
- Date: 08/01/2023 16:10:34
+ Date: 31/01/2023 17:07:32
 */
 
 SET NAMES utf8mb4;
@@ -47,13 +47,12 @@ CREATE TABLE `collect` (
   `song_list_id` int DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='收藏';
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='收藏';
 
 -- ----------------------------
 -- Records of collect
 -- ----------------------------
 BEGIN;
-INSERT INTO `collect` (`id`, `user_id`, `type`, `song_id`, `song_list_id`, `create_time`) VALUES (3, 6, 0, 13, NULL, '2023-01-08 08:04:21');
 COMMIT;
 
 -- ----------------------------
@@ -96,13 +95,14 @@ CREATE TABLE `consumer` (
   `create_time` datetime DEFAULT NULL,
   `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='前端用户表';
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='前端用户表';
 
 -- ----------------------------
 -- Records of consumer
 -- ----------------------------
 BEGIN;
-INSERT INTO `consumer` (`id`, `username`, `password`, `sex`, `phone_num`, `email`, `birth`, `introduction`, `location`, `avator`, `create_time`, `update_time`) VALUES (6, '子歌', 'zige', 0, '15545334996', 'qinxiang96@163.com', '1996-01-24 00:00:00', '没有感情的唱歌机器', '广东', '/avatorImages/16731480093801672411708556hhh.jpg', '2023-01-05 12:47:13', '2023-01-08 03:20:09');
+INSERT INTO `consumer` (`id`, `username`, `password`, `sex`, `phone_num`, `email`, `birth`, `introduction`, `location`, `avator`, `create_time`, `update_time`) VALUES (6, '子歌', '$2a$10$fOWfSeksB/BEU5yhDCFSSu91tgWKAE8zeObUInlHL.JipksQlDUjK', 0, '15545334996', 'qinxiang96@163.com', '1996-01-24 00:00:00', '没有感情的唱歌机器', '广东', '/avatorImages/1674229862688hhh.jpg', '2023-01-05 12:47:13', '2023-01-20 15:51:02');
+INSERT INTO `consumer` (`id`, `username`, `password`, `sex`, `phone_num`, `email`, `birth`, `introduction`, `location`, `avator`, `create_time`, `update_time`) VALUES (7, '小朋友', '$2a$10$IifM7TU9gw.ll6FGHAK.x.blW/BaggYjJUQ9KC9d8OaAHSQFaNrLu', 1, '15545334996', '1457559656@qq.com', '2022-06-23 00:00:00', '一只可爱的泰迪', '广东', '/avatorImages/1674229068929小朋友.jpeg', '2023-01-19 06:52:25', '2023-01-20 15:37:49');
 COMMIT;
 
 -- ----------------------------
@@ -176,7 +176,7 @@ CREATE TABLE `singer` (
 -- Records of singer
 -- ----------------------------
 BEGIN;
-INSERT INTO `singer` (`id`, `name`, `sex`, `pic`, `birth`, `location`, `introduction`) VALUES (11, '李玖哲', 1, '/img/singerPic/1673095390733李玖哲.jpeg', '1980-11-26 00:00:00', '美国', '韩裔美国人，歌手。2003年，李玖哲以MACHI团员的身份进入了华语乐坛。2004年，作为MACHI成员发行了麻吉第二张专辑。2005年，李玖哲终于以其优美及中低音独特音色，发行了个人第一张国语专辑《影子》。2007年以《Baby是我》专辑，夺得第18届台湾金曲奖最佳国语男歌手。2007年发表第三张国语专辑《想太多》，以同名主打《想太多》迅速在内地走红。代表作品：《我会好好过》，《想太多》，《你好吗》。');
+INSERT INTO `singer` (`id`, `name`, `sex`, `pic`, `birth`, `location`, `introduction`) VALUES (11, '李玖哲', 1, '/img/singerPic/1673095390733李玖哲.jpeg', '1980-01-01 01:01:00', '美国', '韩裔美国人，歌手。2003年，李玖哲以MACHI团员的身份进入了华语乐坛。2004年，作为MACHI成员发行了麻吉第二张专辑。2005年，李玖哲终于以其优美及中低音独特音色，发行了个人第一张国语专辑《影子》。2007年以《Baby是我》专辑，夺得第18届台湾金曲奖最佳国语男歌手。2007年发表第三张国语专辑《想太多》，以同名主打《想太多》迅速在内地走红。代表作品：《我会好好过》，《想太多》，《你好吗》。');
 INSERT INTO `singer` (`id`, `name`, `sex`, `pic`, `birth`, `location`, `introduction`) VALUES (12, '棱镜乐队', 2, '/img/singerPic/1673098018676棱镜乐队.jpeg', '1991-01-01 00:00:00', '中国', '两只，一只叫罐罐，一只叫咔咔。');
 INSERT INTO `singer` (`id`, `name`, `sex`, `pic`, `birth`, `location`, `introduction`) VALUES (13, '隔壁老樊', 1, '/img/singerPic/1673104526317隔壁老樊.jpeg', '1998-11-02 00:00:00', '中国', '隔壁老樊嗓音沧桑撩拨，他爱唱歌、爱喝酒、爱弹吉他。由他翻唱的歌都会被打上他自己的标签。那是一种不羁而自由、哀而不伤、忧愁落寞，放肆洒脱的感觉');
 INSERT INTO `singer` (`id`, `name`, `sex`, `pic`, `birth`, `location`, `introduction`) VALUES (14, 'Tones and I', 0, '/img/singerPic/1673105300090Tones and I.jpeg', '1993-05-13 00:00:00', '澳大利亚', '2017年9月，她在街头卖艺演出，被经纪人 Jackson Walkden-Brown挖掘。');
@@ -208,7 +208,7 @@ CREATE TABLE `song` (
   `lyric` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci COMMENT '歌词',
   `url` varchar(255) DEFAULT NULL COMMENT '歌曲地址',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='歌曲';
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='歌曲';
 
 -- ----------------------------
 -- Records of song
@@ -249,8 +249,8 @@ CREATE TABLE `song_list` (
 -- Records of song_list
 -- ----------------------------
 BEGIN;
-INSERT INTO `song_list` (`id`, `title`, `pic`, `introduction`, `style`) VALUES (4, 'Tomorrow', '/img/songListPic/1673153440841明天.jpeg', 'Tomorrow is another day', '华语');
-INSERT INTO `song_list` (`id`, `title`, `pic`, `introduction`, `style`) VALUES (5, 'Romantic', '/img/songListPic/1673153509981浪漫.jpeg', 'Poetry and distance', '欧美');
+INSERT INTO `song_list` (`id`, `title`, `pic`, `introduction`, `style`) VALUES (4, 'Tomorrow', '/img/songListPic/1673363777008board-g6d0adf5d3_640.jpg', 'Tomorrow is another day', '华语');
+INSERT INTO `song_list` (`id`, `title`, `pic`, `introduction`, `style`) VALUES (5, 'Romantic', '/img/songListPic/1673363947706valentines-day-g84d783190_640.png', 'Poetry and distance', '欧美');
 INSERT INTO `song_list` (`id`, `title`, `pic`, `introduction`, `style`) VALUES (6, 'Thinking', '/img/songListPic/1673153727585思考.jpg', 'Thought is everything', '华语');
 INSERT INTO `song_list` (`id`, `title`, `pic`, `introduction`, `style`) VALUES (7, 'Shout', '/img/songListPic/1673153925297呐喊.jpeg', 'Shout out loud', '华语');
 COMMIT;
