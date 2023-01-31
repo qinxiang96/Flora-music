@@ -15,7 +15,8 @@
 系统开发平台：JDK1.8 + Mac OS + Maven3.6.1  
 开发语言：JavaEE + vue2.9.6  
 后台框架：Springboot2.7.7  
-数据库：Mysql8.0.29 (采用的docker容器镜像启动)    缓存：Redis 7.0.0
+数据库：Mysql8.0.29 (采用的docker容器镜像启动)    
+缓存：Redis 7.0.0
 数据库工具：Navicat  
 开发工具：IDEA VSCode  
 浏览器：Chrome  
@@ -40,7 +41,10 @@ npm run dev
 cd /Users/qinxiang/Documents/music-client  
 npm install  
 npm run dev  
-访问部署网址即可使用(后端处于运行状态，数据库和缓存保持连接状态)
+访问部署网址即可使用(后端处于运行状态，数据库和缓存保持连接状态)  
+
+## 4、数据库 music
+运行music.sql
 
 
 
